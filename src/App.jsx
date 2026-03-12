@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Assignment from './Assignment';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
      <h1>Hello react</h1>
      <Student name="Shakil" roll="102"></Student>
-     <Student name="Abir" roll="104"></Student>
+     <Student name="Abir" roll="14"></Student>
      <Player name="Messi" goal="500"></Player>
      <Player name="Ronaldo" goal="950"></Player>
+     <Assignment number="01" marks="60"></Assignment>
+     <Assignment number="02" marks="60"></Assignment>
+     <Assignment number="03" marks="60"></Assignment>
+     <Assignment number="04" marks="60"></Assignment>
+     <Assignment number="05"></Assignment>
     </>
   )
 }
