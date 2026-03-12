@@ -8,27 +8,30 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <h1>Hello react</h1>
+     <Student name="Shakil" roll="102"></Student>
+     <Student name="Abir" roll="104"></Student>
+     <Player name="Messi" goal="500"></Player>
+     <Player name="Ronaldo" goal="950"></Player>
     </>
+  )
+}
+
+function Student (props) {
+  return (
+    <div>
+      <p>Name: {props.name}</p>
+      <p>roll: {props.roll}</p>
+    </div>
+  )
+}
+
+function Player ({name, goal}) {
+  return (
+    <div>
+      <h4>Player: {name}</h4>
+      <p>Goal: {goal}</p>
+    </div>
   )
 }
 
