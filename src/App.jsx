@@ -1,5 +1,6 @@
 import Assignment from './Assignment';
 import Counter from './Counter';
+import Batsman from './Batsman';
 import './App.css'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
      <h1>Hello react</h1>
+     <Batsman name="Tamim"></Batsman>
      <Counter></Counter>
      <Student name="Shakil" roll="102"></Student>
      <Student name="Abir" roll="14"></Student>

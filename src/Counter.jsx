@@ -6,7 +6,7 @@ export default function Counter(){
 
     const handleClick = () => {
         const newCount = count + 1;
-        return setCount(newCount);
+        setCount(newCount);
     }
 
     const counterStyle = {
