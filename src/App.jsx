@@ -1,4 +1,5 @@
 import Assignment from './Assignment';
+import Counter from './Counter';
 import './App.css'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
      <h1>Hello react</h1>
+     <Counter></Counter>
      <Student name="Shakil" roll="102"></Student>
      <Student name="Abir" roll="14"></Student>
      <Player name="Messi" goal="500"></Player>
