@@ -1,13 +1,31 @@
 import Assignment from './Assignment';
 import Counter from './Counter';
 import Batsman from './Batsman';
+import Users from './Users';
+import Friends from './Friends';
 import './App.css'
+import { Suspense } from 'react';
+
+const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json());
+
+const fetchFriends = async() => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+}
 
 function App() {
+  const friendsPromise = fetchFriends();
 
   return (
     <>
      <h1>Hello react</h1>
+
+    <Suspense fallback={<h4>Friends are coming...</h4>}>
+      <Friends friendsPromise={friendsPromise}></Friends>
+    </Suspense>
+     <Suspense fallback={<h4>Users are loading...</h4>}>
+      <Users fetchUsers={fetchUsers}></Users>
+     </Suspense>
      <Batsman name="Tamim"></Batsman>
      <Counter></Counter>
      <Student name="Shakil" roll="102"></Student>
