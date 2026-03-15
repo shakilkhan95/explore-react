@@ -7,6 +7,7 @@ import './App.css'
 import { Suspense } from 'react';
 import UserName from './UserName';
 import Posts from './Posts';
+import Comments from './Comments';
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json());
 
@@ -25,15 +26,25 @@ const fetchPosts = async() => {
   return res.json();
 }
 
+const fetchComments = async() => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/comments');
+  return res.json();
+}
+
 function App() {
   const friendsPromise = fetchFriends();
   const userNamePromise = fetchUserName();
 
   const postsPromise = fetchPosts();
+  const commentsPromise = fetchComments();
 
   return (
     <>
      <h1>Hello react</h1>
+
+    <Suspense fallback={<h4>Comments are loading...</h4>}>
+      <Comments commentsPromise={commentsPromise}></Comments>
+    </Suspense>
 
     <Suspense fallback={<h4>Posts are loading...</h4>}>
       <Posts postsPromise={postsPromise}></Posts>
